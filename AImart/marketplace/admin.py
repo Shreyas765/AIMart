@@ -1,5 +1,5 @@
 from django.contrib import admin
-#from .models import AIModel
+from .models import AIModel
 
 # Register your models here.
 

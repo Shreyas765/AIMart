@@ -4,6 +4,7 @@ import logo from './assets/Logo.png';
 import './components/SearchBar.css';
 import './components/logo.css';
 import './components/welcomeText.css';
+import './components/wpProductBox.css';
 
 function App() {
   const [models, setModels] = useState([]);
@@ -36,6 +37,22 @@ function App() {
     setSuggestions(results.slice(0, 5)); // Show up to 5 suggestions
   };
 
+  //product box:
+  const ProductBox = ({ image, title, details }) => (
+    <div className="product-box">
+      <img src={image} alt={title} />
+      <div className="product-details">
+        <h3>{title}</h3>
+        <ul>
+          {details.map((detail, index) => (
+            <li key={index}>{detail}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+
+
   return (
     <div style={{ padding: '20px' }}>
       <header
@@ -45,8 +62,8 @@ function App() {
           justifyContent: 'space-between',
           padding: '10px 20px',
           borderBottom: '1px solid #ccc',
-        }}
-      >
+        }}>
+
         {/* Logo Section */}
         <div className="logo-container">
           <img src={logo} alt="AIMart" className="logo" />
@@ -69,40 +86,39 @@ function App() {
             flex: 1,
             display: 'flex',
             justifyContent: 'flex-end',
-            gap: '10px',
-          }}
-        >
+            whiteSpace: 'nowrap',
+            gap: '15px',
+          }}>
+
           <button
             style={{
-              padding: '10px 15px',
-              backgroundColor: '#007bff',
+              padding: '20px 20px',
+              backgroundColor: '#0097B2',
               color: '#f5f5f5',
               border: 'none',
-              borderRadius: '5px',
+              borderRadius: '10px',
               cursor: 'pointer',
             }}
-          >
-            Sign In
-          </button>
+          > Sign In </button>
+
           <button
             style={{
-              padding: '10px 15px',
-              backgroundColor: '#007bff',
+              padding: '20px 15px',
+              backgroundColor: '#0097B2',
               color: '#fff',
               border: 'none',
-              borderRadius: '5px',
+              borderRadius: '10px',
               cursor: 'pointer',
             }}
-          >
-            Cart
-          </button>
+          > Cart </button>
         </div>
       </header>
 
       {/* Dropdown menu for the search bar*/}
       <div style={{ marginTop: '20px' }}>
       {searchResults.length === 0 && <p>No results found</p>}
-    </div>
+      </div>
+
     {/* Welcome Text: */}
     <div className="welcome-text">
       {/*<span style={{color: 'black'}}>Welcome to </span>*/}
@@ -110,7 +126,65 @@ function App() {
       <span style={{color: 'black'}}>Mart</span> 
     </div>
     <div className="slogan-text">Shop for Intelligence</div>
-    </div>
+
+     {/* Front page product Boxes */}
+      <div className='product-container'>
+            <ProductBox
+              image="https://via.placeholder.com/150"
+              title="AI Model 1"
+              details={[
+                "Developer: ",
+                "Price: ",
+                "Description: ",
+              ]}
+            />
+            <ProductBox
+              image="https://via.placeholder.com/150"
+              title="AI Model 2"
+              details={[
+                "Developer: ",
+                "Price: ",
+                "Description: ",
+              ]}
+            />
+            <ProductBox
+              image="https://via.placeholder.com/150"
+              title="AI Model 3"
+              details={[
+                "Developer: ",
+                "Price: ",
+                "Description: ",
+              ]}
+            />
+            <ProductBox
+              image="https://via.placeholder.com/150"
+              title="AI Model 4"
+              details={[
+                "Developer: ",
+                "Price: ",
+                "Description: ",
+              ]}
+            />
+            <ProductBox
+              image="https://via.placeholder.com/150"
+              title="AI Model 5"
+              details={[
+                "Developer: ",
+                "Price: ",
+                "Description: ",
+              ]}
+            />
+                        <ProductBox
+              image="https://via.placeholder.com/150"
+              title="AI Model 6"
+              details={[
+                "Developer: ",
+                "Price: ",
+                "Description: ",
+              ]}
+            />
+      </div>
+    </div>    
   );
 }
 
