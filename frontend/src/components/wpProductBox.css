@@ -4,8 +4,8 @@
     flex-wrap: wrap;
     align-items: center;
     margin-top: 600px; /* Push below the slogan */
-    gap: 20px;
-    padding-bottom: 200px; /* Creates space for scrolling */
+    gap: 30px;
+    padding-bottom: 75px; /* Creates space for scrolling */
   }
   
   /* Individual ProductBox Styling */

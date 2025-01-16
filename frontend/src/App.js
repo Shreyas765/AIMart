@@ -5,6 +5,7 @@ import './components/SearchBar.css';
 import './components/logo.css';
 import './components/welcomeText.css';
 import './components/wpProductBox.css';
+import Footer from './components/footer';
 
 function App() {
   const [models, setModels] = useState([]);
@@ -128,6 +129,7 @@ function App() {
     <div className="slogan-text">Shop for Intelligence</div>
 
      {/* Front page product Boxes */}
+     {/* TODO: MAKE THE BOXES CLICKABLE (BUTTONS) */}
       <div className='product-container'>
             <ProductBox
               image="https://via.placeholder.com/150"
@@ -174,7 +176,7 @@ function App() {
                 "Description: ",
               ]}
             />
-                        <ProductBox
+            <ProductBox
               image="https://via.placeholder.com/150"
               title="AI Model 6"
               details={[
@@ -184,6 +186,9 @@ function App() {
               ]}
             />
       </div>
+
+      
+      <Footer />
     </div>    
   );
 }
